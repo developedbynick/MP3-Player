@@ -1,0 +1,24 @@
+{
+  "name": "mp3-player",
+  "version": "1.0.0",
+  "description": "This mp3 player will allow users to add audios locally",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel ./src/index.html --https",
+    "build": "parcel build ./src/index.html"
+  },
+  "keywords": [
+    "mp3",
+    "player",
+    "mp3-player"
+  ],
+  "author": "Nicholas Smith",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.0-beta.3.1",
+    "core-js": "^3.13.0",
+    "parcel": "^2.0.0-beta.3.1",
+    "regenerator-runtime": "^0.13.7",
+    "sass": "^1.34.0"
+  }
+}

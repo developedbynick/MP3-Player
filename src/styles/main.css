@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pattaya&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  overflow-x: hidden;
+}
+html {
+  font-size: 62.5%;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.8rem;
+}
+h4,
+p,
+a,
+li,
+i,
+button {
+  text-decoration: none;
+  font-size: 1.6rem;
+  text-overflow: ellipsis;
+  background: none;
+  outline: none;
+  border: none;
+}
+i {
+  pointer-events: none;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.credit {
+  position: absolute;
+  top: 50%;
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
+  left: 10px;
+  transform: rotateZ(180deg) translateY(50%);
+  letter-spacing: 3px;
+  font-family: "Pattaya", cursive;
+  color: #f2c94c;
+}
+.card {
+  box-shadow: 10px 10px 90px 10px rgba(0, 0, 0, 0.3);
+  padding: 25px 5px 10px 5px;
+  width: 250px;
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 3px;
+}
+.song--cover--details {
+  width: 100%;
+}
+#song--cover {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+.song--title {
+  font-size: 1.8rem;
+  text-transform: capitalize;
+  font-weight: 600;
+  margin-bottom: 5px;
+  text-overflow: ellipsis;
+}
+.song--artist {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #cecece;
+}
+.audio--controls--container {
+  width: 100%;
+  margin: 10px 0px;
+  position: relative;
+}
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 40%;
+  margin: 15px auto;
+}
+.controls button {
+  cursor: pointer;
+  min-width: 40px;
+  min-height: 40px;
+}
+button.pause--play {
+  background: linear-gradient(45deg, #9b51e0, #f2c94c);
+  transform: translateY(-14px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+}
+.bar {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  padding: 0 5px;
+  margin: 10px auto;
+  align-items: center;
+}
+.bar .song--progress--container {
+  border-radius: 500px;
+  width: 100%;
+  background: rgba(155, 81, 224, 0.2);
+  height: 5px;
+  margin: 0 5px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.bar .song--progress--container .song--progress {
+  background: #9b51e0;
+  width: 55%;
+  height: 100%;
+}
+@media screen and (min-width: 500px) {
+  .card {
+    min-width: 400px;
+  }
+}
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 52.5%;
+  }
+}
+/*# sourceMappingURL=index.b8b11644.css.map */
