@@ -28,15 +28,26 @@
       <audio id="see--you--again--audio" src=""></audio> -->
       <div class="audio--controls--container">
         <div class="controls">
-          <button class="prev--song" title="Previous Track">
-            <i class="fas fa-step-backward"></i>
-          </button>
-          <button class="pause--play" id="play">
-            <i class="fas fa-play"></i>
-          </button>
-          <button class="next--song" title="Next Track">
-            <i class="fas fa-step-forward"></i>
-          </button>
+          <div class="main-audio-controls">
+            <button class="prev--song" title="Previous Track">
+              <i class="fas fa-step-backward"></i>
+            </button>
+            <button class="pause--play" id="play">
+              <i class="fas fa-play"></i>
+            </button>
+            <button class="next--song" title="Next Track">
+              <i class="fas fa-step-forward"></i>
+            </button>
+          </div>
+          <div class="volume-controls">
+            <button id="volume-up-btn" title="volume up">
+              <i class="fas fa-caret-up"></i>
+            </button>
+            <p id="volume-percentage">0%</p>
+            <button id="volume-down-btn" title="volume down">
+              <i class="fas fa-caret-down"></i>
+            </button>
+          </div>
         </div>
         <div class="bar">
           <p class="current--time">1:30</p>

@@ -95,17 +95,17 @@ body {
   margin: 10px 0px;
   position: relative;
 }
-.controls {
+.main-audio-controls {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   width: 40%;
   margin: 15px auto;
 }
-.controls button {
+.main-audio-controls button {
   cursor: pointer;
-  min-width: 40px;
-  min-height: 40px;
+  width: 45px;
+  height: 45px;
 }
 button.pause--play {
   background: linear-gradient(45deg, #9b51e0, #f2c94c);
@@ -115,6 +115,24 @@ button.pause--play {
   align-items: center;
   border-radius: 50%;
   color: white;
+}
+.volume-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.volume-controls button {
+  margin: 0 15px;
+  cursor: pointer;
+  transition: opacity 0.4s ease-out;
+}
+.volume-controls button:hover {
+  opacity: 0.6;
+}
+.volume-controls button i {
+  font-size: 28px;
 }
 .bar {
   display: flex;

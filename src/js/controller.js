@@ -6,7 +6,7 @@ class Song {
     this.audioSrc = `./sounds/${title}.mp3`;
   }
 }
-class AudioPlay {
+class App {
   audioEl = document.querySelector("#main--audio");
   play = document.querySelector(".pause--play");
   prevSong = document.querySelector(".prev--song");
@@ -17,8 +17,12 @@ class AudioPlay {
   songTitle = document.querySelector(".song--title");
   songArtist = document.querySelector(".song--artist");
   songCover = document.querySelector("#song--cover");
+  volumeUp = document.getElementById("volume-up-btn");
+  volumeDown = document.getElementById("volume-down-btn");
+  volumePercentage = document.getElementById("volume-percentage");
   constructor() {
     this.reset();
+    this.updateVolumeDOM(this.audioEl.volume);
     this.audioEl.addEventListener("load", this.audioLoad);
     this.audioEl.addEventListener(
       "timeupdate",
@@ -33,6 +37,26 @@ class AudioPlay {
     this.nextSong.addEventListener("click", this.handleNext.bind(this));
     this.prevSong.addEventListener("click", this.handlePrev.bind(this));
     addEventListener("keypress", this.handleSpacePress.bind(this));
+    this.volumeUp.addEventListener("click", this.handleVolumeUp.bind(this));
+    this.volumeDown.addEventListener("click", this.handleVolumeDown.bind(this));
+  }
+  audioLoad(e) {
+    print(e.target.volume);
+  }
+  handleVolumeUp(e) {
+    if (this.audioEl.volume === 1) return;
+    this.audioEl.volume = parseFloat(this.audioEl.volume + 0.1).toFixed(1);
+    this.updateVolumeDOM(this.audioEl.volume);
+  }
+  handleVolumeDown(e) {
+    if (this.audioEl.volume === 0) return;
+
+    this.audioEl.volume = parseFloat(this.audioEl.volume - 0.1).toFixed(1);
+    this.updateVolumeDOM(this.audioEl.volume);
+  }
+  updateVolumeDOM(volume) {
+    const volumeAsPercentage = Math.floor(volume * 100);
+    this.volumePercentage.textContent = `${volumeAsPercentage}%`;
   }
   handleSpacePress(e) {
     e.preventDefault();
@@ -55,7 +79,6 @@ class AudioPlay {
     this.setSrc();
     this.updateDOM();
     this.audioEl.play();
-    console.log(state);
     e.target.blur();
   }
   handlePrev(e) {
@@ -71,7 +94,6 @@ class AudioPlay {
     this.setSrc();
     this.updateDOM();
     this.audioEl.play();
-    console.log(state);
     e.target.blur();
   }
   setPlayOrPause(type) {
@@ -115,11 +137,7 @@ class AudioPlay {
     const width = e.target.clientWidth;
     const clickX = e.offsetX;
     const duration = this.audioEl.duration;
-    console.log({
-      width,
-      clickX,
-      duration,
-    });
+
     this.audioEl.currentTime = (clickX / width) * duration;
     // this.progressBar.style.width = `${this.audioEl.currentTime}%`;
   }
@@ -163,6 +181,4 @@ const state = {
 };
 state.playing = state.songs[0];
 
-const AP = new AudioPlay();
-console.log(AP);
-// AP.audioEl.src = `../sounds/${state.playing.title}.mp3`;
+const app = new App();
